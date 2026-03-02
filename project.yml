@@ -79,6 +79,9 @@ targets:
     platform: iOS
     sources:
       - PushupCounterTests
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
     dependencies:
       - target: PushupCounter
 
