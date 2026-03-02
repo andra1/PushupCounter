@@ -1,0 +1,97 @@
+# project.yml
+name: PushupCounter
+options:
+  bundleIdPrefix: com.pushupcounter
+  deploymentTarget:
+    iOS: "17.0"
+  xcodeVersion: "15.0"
+  generateEmptyDirectories: true
+settings:
+  base:
+    SWIFT_VERSION: "5.9"
+    CODE_SIGN_STYLE: Automatic
+    DEVELOPMENT_TEAM: "" # TODO: Fill in your Apple Developer Team ID
+targets:
+  PushupCounter:
+    type: application
+    platform: iOS
+    sources:
+      - PushupCounter
+    info:
+      path: PushupCounter/Info.plist
+      properties:
+        CFBundleDisplayName: PushupCounter
+        NSCameraUsageDescription: "PushupCounter needs camera access to detect and count your pushups in real-time."
+        UILaunchScreen: {}
+        UIRequiredDeviceCapabilities:
+          - armv7
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+    settings:
+      base:
+        TARGETED_DEVICE_FAMILY: "1"
+        PRODUCT_BUNDLE_IDENTIFIER: com.pushupcounter.app
+        CODE_SIGN_ENTITLEMENTS: PushupCounter/PushupCounter.entitlements
+    dependencies:
+      - target: ShieldConfigurationExtension
+      - target: DeviceActivityMonitorExtension
+
+  ShieldConfigurationExtension:
+    type: app-extension
+    platform: iOS
+    sources:
+      - ShieldConfigurationExtension
+    info:
+      path: ShieldConfigurationExtension/Info.plist
+      properties:
+        CFBundleShortVersionString: "1.0"
+        CFBundleVersion: "1"
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.ManagedSettingsUI.shield-configuration
+          NSExtensionPrincipalClass: "$(PRODUCT_MODULE_NAME).ShieldConfigurationExtension"
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.pushupcounter.app.shield-config
+        CODE_SIGN_ENTITLEMENTS: ShieldConfigurationExtension/ShieldConfigurationExtension.entitlements
+
+  DeviceActivityMonitorExtension:
+    type: app-extension
+    platform: iOS
+    sources:
+      - DeviceActivityMonitorExtension
+    info:
+      path: DeviceActivityMonitorExtension/Info.plist
+      properties:
+        CFBundleShortVersionString: "1.0"
+        CFBundleVersion: "1"
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.deviceactivity.monitor
+          NSExtensionPrincipalClass: "$(PRODUCT_MODULE_NAME).DeviceActivityMonitorExtension"
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.pushupcounter.app.activity-monitor
+        CODE_SIGN_ENTITLEMENTS: DeviceActivityMonitorExtension/DeviceActivityMonitorExtension.entitlements
+
+  PushupCounterTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - PushupCounterTests
+    dependencies:
+      - target: PushupCounter
+
+schemes:
+  PushupCounter:
+    build:
+      targets:
+        PushupCounter: all
+        ShieldConfigurationExtension: all
+        DeviceActivityMonitorExtension: all
+    run:
+      config: Debug
+    test:
+      config: Debug
+      targets:
+        - PushupCounterTests

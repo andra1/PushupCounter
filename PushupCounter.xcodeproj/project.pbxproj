@@ -1,0 +1,689 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		04430ED38CF3B9CFFCDCE139 /* DeviceActivityMonitorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CBB6B83E47DA4F678DA165 /* DeviceActivityMonitorExtension.swift */; };
+		5DC46F6A0F8B47939688993D /* PushupCounterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B4A9673787003AD3C837D8 /* PushupCounterTests.swift */; };
+		93C2EF8E63B7FB2CB43F7806 /* DeviceActivityMonitorExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = ECC78961F21E04507B245040 /* DeviceActivityMonitorExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		DC395A91CC36969B1C06A99D /* ShieldConfigurationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA67EAB17E196653BDABB464 /* ShieldConfigurationExtension.swift */; };
+		DCC41D72F757EC7B053B10FB /* ShieldConfigurationExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 79AC80239B92F6CAC19BD658 /* ShieldConfigurationExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E53E7852F6DDBD416E3C1E26 /* PushupCounterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D202C2CC77C9E0625A151DD /* PushupCounterApp.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		55EF0E811D2A181C5B7A5E37 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 335A40C73FFB7BFD8F37DE7B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A20797B1E729DBA460F8109E;
+			remoteInfo = PushupCounter;
+		};
+		906F5C5870181F2F7955834C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 335A40C73FFB7BFD8F37DE7B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E61E249F5EDF9B3E353C910;
+			remoteInfo = DeviceActivityMonitorExtension;
+		};
+		B31F8ED6811B8FC55F0CAEAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 335A40C73FFB7BFD8F37DE7B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DE86F51379B0C875E3D6DFBF;
+			remoteInfo = ShieldConfigurationExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BBE171856D7425E5892AA222 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				DCC41D72F757EC7B053B10FB /* ShieldConfigurationExtension.appex in Embed Foundation Extensions */,
+				93C2EF8E63B7FB2CB43F7806 /* DeviceActivityMonitorExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1C56DBDD63A282E860E40E87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		2600B1157CDCCDB02023D789 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		3D202C2CC77C9E0625A151DD /* PushupCounterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushupCounterApp.swift; sourceTree = "<group>"; };
+		45B4A9673787003AD3C837D8 /* PushupCounterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushupCounterTests.swift; sourceTree = "<group>"; };
+		5151D58278B5284E6162ABC6 /* ShieldConfigurationExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShieldConfigurationExtension.entitlements; sourceTree = "<group>"; };
+		591A5F0A7E1938941EFEFACB /* DeviceActivityMonitorExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DeviceActivityMonitorExtension.entitlements; sourceTree = "<group>"; };
+		63F9169821C1A788202B2F8C /* PushupCounter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PushupCounter.entitlements; sourceTree = "<group>"; };
+		76CD551369DED775AD4DBFDF /* PushupCounter.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = PushupCounter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		79AC80239B92F6CAC19BD658 /* ShieldConfigurationExtension.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = ShieldConfigurationExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D1C4C28FC8F51D988A2F3E1 /* PushupCounterTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = PushupCounterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9CBB6B83E47DA4F678DA165 /* DeviceActivityMonitorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceActivityMonitorExtension.swift; sourceTree = "<group>"; };
+		DA67EAB17E196653BDABB464 /* ShieldConfigurationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShieldConfigurationExtension.swift; sourceTree = "<group>"; };
+		E6DFD351D4122390AE8FAD6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		ECC78961F21E04507B245040 /* DeviceActivityMonitorExtension.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = DeviceActivityMonitorExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		09F93F49460737BB9BF2EDC8 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		10537D84BAB6DC59E2B9DAB4 /* ShieldConfigurationExtension */ = {
+			isa = PBXGroup;
+			children = (
+				E6DFD351D4122390AE8FAD6B /* Info.plist */,
+				5151D58278B5284E6162ABC6 /* ShieldConfigurationExtension.entitlements */,
+				DA67EAB17E196653BDABB464 /* ShieldConfigurationExtension.swift */,
+			);
+			path = ShieldConfigurationExtension;
+			sourceTree = "<group>";
+		};
+		48807B0C6BACFB5BE66CB30F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ECC78961F21E04507B245040 /* DeviceActivityMonitorExtension.appex */,
+				76CD551369DED775AD4DBFDF /* PushupCounter.app */,
+				9D1C4C28FC8F51D988A2F3E1 /* PushupCounterTests.xctest */,
+				79AC80239B92F6CAC19BD658 /* ShieldConfigurationExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		57F76045CF57D341066E4773 /* DeviceActivityMonitorExtension */ = {
+			isa = PBXGroup;
+			children = (
+				591A5F0A7E1938941EFEFACB /* DeviceActivityMonitorExtension.entitlements */,
+				A9CBB6B83E47DA4F678DA165 /* DeviceActivityMonitorExtension.swift */,
+				2600B1157CDCCDB02023D789 /* Info.plist */,
+			);
+			path = DeviceActivityMonitorExtension;
+			sourceTree = "<group>";
+		};
+		6EA8B3EF6EC5FC3AEF60BEE8 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		78F6561D4B9B61C2F1EA7507 /* PushupCounterTests */ = {
+			isa = PBXGroup;
+			children = (
+				45B4A9673787003AD3C837D8 /* PushupCounterTests.swift */,
+			);
+			path = PushupCounterTests;
+			sourceTree = "<group>";
+		};
+		8478745A251F4DE9B96F501F /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		96D49028C75FADFFD18F4ABA = {
+			isa = PBXGroup;
+			children = (
+				57F76045CF57D341066E4773 /* DeviceActivityMonitorExtension */,
+				B779CE2A1E549D14783EE273 /* PushupCounter */,
+				78F6561D4B9B61C2F1EA7507 /* PushupCounterTests */,
+				10537D84BAB6DC59E2B9DAB4 /* ShieldConfigurationExtension */,
+				48807B0C6BACFB5BE66CB30F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9A8AB867078788DA57DAE957 /* Today */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Today;
+			sourceTree = "<group>";
+		};
+		ABDF55AAAB2081D8E5BEAD34 /* Session */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Session;
+			sourceTree = "<group>";
+		};
+		B580B7E4AE051AABEC6F055A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F3E1C790EDA98376D912DA0B /* History */,
+				09F93F49460737BB9BF2EDC8 /* Onboarding */,
+				ABDF55AAAB2081D8E5BEAD34 /* Session */,
+				6EA8B3EF6EC5FC3AEF60BEE8 /* Settings */,
+				9A8AB867078788DA57DAE957 /* Today */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B779CE2A1E549D14783EE273 /* PushupCounter */ = {
+			isa = PBXGroup;
+			children = (
+				1C56DBDD63A282E860E40E87 /* Info.plist */,
+				63F9169821C1A788202B2F8C /* PushupCounter.entitlements */,
+				3D202C2CC77C9E0625A151DD /* PushupCounterApp.swift */,
+				E6220CD06A73F987CF5B0B1F /* Models */,
+				F8AF76AE41DD87F6C96D973A /* Services */,
+				8478745A251F4DE9B96F501F /* Utilities */,
+				B580B7E4AE051AABEC6F055A /* Views */,
+			);
+			path = PushupCounter;
+			sourceTree = "<group>";
+		};
+		E6220CD06A73F987CF5B0B1F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F3E1C790EDA98376D912DA0B /* History */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		F8AF76AE41DD87F6C96D973A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0394B86415FDFF38BEEF8E70 /* PushupCounterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C7EEA6365A28988349D3408F /* Build configuration list for PBXNativeTarget "PushupCounterTests" */;
+			buildPhases = (
+				C4174609D3F1A49302F7FCD8 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9D8A5E173E76DCB6B0DCA89A /* PBXTargetDependency */,
+			);
+			name = PushupCounterTests;
+			packageProductDependencies = (
+			);
+			productName = PushupCounterTests;
+			productReference = 9D1C4C28FC8F51D988A2F3E1 /* PushupCounterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		7E61E249F5EDF9B3E353C910 /* DeviceActivityMonitorExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6C0E7DE2B87A15109BA5EF8A /* Build configuration list for PBXNativeTarget "DeviceActivityMonitorExtension" */;
+			buildPhases = (
+				ADDF8CCEFFDDCAB806499157 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DeviceActivityMonitorExtension;
+			packageProductDependencies = (
+			);
+			productName = DeviceActivityMonitorExtension;
+			productReference = ECC78961F21E04507B245040 /* DeviceActivityMonitorExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		A20797B1E729DBA460F8109E /* PushupCounter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3D0BF43D3C52580352AA9A3F /* Build configuration list for PBXNativeTarget "PushupCounter" */;
+			buildPhases = (
+				79D4F210213425952945EC84 /* Sources */,
+				BBE171856D7425E5892AA222 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9879AF551F371EBB6E6B7835 /* PBXTargetDependency */,
+				3B0728F5A68C117709B8D068 /* PBXTargetDependency */,
+			);
+			name = PushupCounter;
+			packageProductDependencies = (
+			);
+			productName = PushupCounter;
+			productReference = 76CD551369DED775AD4DBFDF /* PushupCounter.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DE86F51379B0C875E3D6DFBF /* ShieldConfigurationExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F0E724D4644026FB964A9E13 /* Build configuration list for PBXNativeTarget "ShieldConfigurationExtension" */;
+			buildPhases = (
+				F8DC86A93759FCB71FB8006B /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ShieldConfigurationExtension;
+			packageProductDependencies = (
+			);
+			productName = ShieldConfigurationExtension;
+			productReference = 79AC80239B92F6CAC19BD658 /* ShieldConfigurationExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		335A40C73FFB7BFD8F37DE7B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					0394B86415FDFF38BEEF8E70 = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+					7E61E249F5EDF9B3E353C910 = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+					A20797B1E729DBA460F8109E = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+					DE86F51379B0C875E3D6DFBF = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 5DCA090FD44F289C26B660DD /* Build configuration list for PBXProject "PushupCounter" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 96D49028C75FADFFD18F4ABA;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7E61E249F5EDF9B3E353C910 /* DeviceActivityMonitorExtension */,
+				A20797B1E729DBA460F8109E /* PushupCounter */,
+				0394B86415FDFF38BEEF8E70 /* PushupCounterTests */,
+				DE86F51379B0C875E3D6DFBF /* ShieldConfigurationExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		79D4F210213425952945EC84 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E53E7852F6DDBD416E3C1E26 /* PushupCounterApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADDF8CCEFFDDCAB806499157 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04430ED38CF3B9CFFCDCE139 /* DeviceActivityMonitorExtension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4174609D3F1A49302F7FCD8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5DC46F6A0F8B47939688993D /* PushupCounterTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8DC86A93759FCB71FB8006B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC395A91CC36969B1C06A99D /* ShieldConfigurationExtension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3B0728F5A68C117709B8D068 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7E61E249F5EDF9B3E353C910 /* DeviceActivityMonitorExtension */;
+			targetProxy = 906F5C5870181F2F7955834C /* PBXContainerItemProxy */;
+		};
+		9879AF551F371EBB6E6B7835 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DE86F51379B0C875E3D6DFBF /* ShieldConfigurationExtension */;
+			targetProxy = B31F8ED6811B8FC55F0CAEAC /* PBXContainerItemProxy */;
+		};
+		9D8A5E173E76DCB6B0DCA89A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A20797B1E729DBA460F8109E /* PushupCounter */;
+			targetProxy = 55EF0E811D2A181C5B7A5E37 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		06EEBF0847CD747CCF8F1D3D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.pushupcounter.PushupCounterTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PushupCounter.app/PushupCounter";
+			};
+			name = Debug;
+		};
+		2123CFC52E2E154F1DC6E2BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PushupCounter/PushupCounter.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = PushupCounter/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.pushupcounter.app;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		27B06C42681ED77AF0A8086C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.pushupcounter.PushupCounterTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PushupCounter.app/PushupCounter";
+			};
+			name = Release;
+		};
+		3596B8878CBF99F52D2EFDB8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ShieldConfigurationExtension/ShieldConfigurationExtension.entitlements;
+				INFOPLIST_FILE = ShieldConfigurationExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pushupcounter.app.shield-config";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		68F2A0A5034DDB5501580AED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ShieldConfigurationExtension/ShieldConfigurationExtension.entitlements;
+				INFOPLIST_FILE = ShieldConfigurationExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pushupcounter.app.shield-config";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		852F1412C1E78724DD09A0CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.9;
+			};
+			name = Debug;
+		};
+		9D8EA9E4BB52C5C0AF618755 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.9;
+			};
+			name = Release;
+		};
+		AE28DABAC295DAA4E8623B35 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = DeviceActivityMonitorExtension/DeviceActivityMonitorExtension.entitlements;
+				INFOPLIST_FILE = DeviceActivityMonitorExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pushupcounter.app.activity-monitor";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C29E7534599AE8ECF5D9C37B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PushupCounter/PushupCounter.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = PushupCounter/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.pushupcounter.app;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		EE9F252220F7E71923FC7521 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = DeviceActivityMonitorExtension/DeviceActivityMonitorExtension.entitlements;
+				INFOPLIST_FILE = DeviceActivityMonitorExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pushupcounter.app.activity-monitor";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3D0BF43D3C52580352AA9A3F /* Build configuration list for PBXNativeTarget "PushupCounter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C29E7534599AE8ECF5D9C37B /* Debug */,
+				2123CFC52E2E154F1DC6E2BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		5DCA090FD44F289C26B660DD /* Build configuration list for PBXProject "PushupCounter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				852F1412C1E78724DD09A0CE /* Debug */,
+				9D8EA9E4BB52C5C0AF618755 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		6C0E7DE2B87A15109BA5EF8A /* Build configuration list for PBXNativeTarget "DeviceActivityMonitorExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE28DABAC295DAA4E8623B35 /* Debug */,
+				EE9F252220F7E71923FC7521 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		C7EEA6365A28988349D3408F /* Build configuration list for PBXNativeTarget "PushupCounterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				06EEBF0847CD747CCF8F1D3D /* Debug */,
+				27B06C42681ED77AF0A8086C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		F0E724D4644026FB964A9E13 /* Build configuration list for PBXNativeTarget "ShieldConfigurationExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3596B8878CBF99F52D2EFDB8 /* Debug */,
+				68F2A0A5034DDB5501580AED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 335A40C73FFB7BFD8F37DE7B /* Project object */;
+}
