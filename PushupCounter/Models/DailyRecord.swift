@@ -14,5 +14,6 @@ final class DailyRecord {
 
     init(date: Date, goalMet: Bool = false) {
         self.date = date
+        self.goalMet = goalMet
     }
 }
