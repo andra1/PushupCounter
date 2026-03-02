@@ -12,15 +12,18 @@
 		05C9CC8FE680B0F1C0DE50AE /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5B17486E4C7F26EBDBD894 /* UserSettings.swift */; };
 		34211D4FC941ABAAC8CFE7AA /* DailyRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E211A18DABB7037516DABD /* DailyRecord.swift */; };
 		39F9D90146A705C50E2F6243 /* PushupDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAA15E16F521E3EE91AC910 /* PushupDetector.swift */; };
+		44091A0F285E8265CE533223 /* WelcomeStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8B0EFC3314EF9DF9FF7FD9 /* WelcomeStepView.swift */; };
 		47AA8A95933F0C48789B71F6 /* ScreenTimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81626AB3BA529F83775EB5C6 /* ScreenTimeManager.swift */; };
 		4AE631BB8091CDC1C9C2B8A0 /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D9054E45BDA041F5E43A57 /* CameraManager.swift */; };
 		5DC46F6A0F8B47939688993D /* PushupCounterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B4A9673787003AD3C837D8 /* PushupCounterTests.swift */; };
 		6926FD9A4F9A73D4E31E4DC8 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98E9397CA1D9DF7E924B5AD /* SettingsView.swift */; };
 		6D4024B4200DB050954C98F7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE972E553D0BF414A41CFAB /* ContentView.swift */; };
+		7E9E39765D049BC319B56B8F /* GoalStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69410369882E65488E4FBCE /* GoalStepView.swift */; };
 		894862AF60E3E838FE376D0E /* CameraPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA0072B626DAED6717451E0 /* CameraPreviewView.swift */; };
 		93C2EF8E63B7FB2CB43F7806 /* DeviceActivityMonitorExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = ECC78961F21E04507B245040 /* DeviceActivityMonitorExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A48763F00E5F911210057CBF /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD23BC70D9E06B34362B3E2E /* HistoryView.swift */; };
 		BEBAD507B0DE046765962BD6 /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C925AD054A8C2FED519E56 /* TodayView.swift */; };
+		C1C994063E68806D331A119C /* PermissionsStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD43929FAC28CD97DC59250 /* PermissionsStepView.swift */; };
 		C6D18561FB04AC3ACE9A2DEE /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965689C789175808AE8CDC70 /* OnboardingView.swift */; };
 		CEED567E825366A830C1B8F7 /* AngleCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD6B6CFB5227C1A705DA84B /* AngleCalculator.swift */; };
 		DC395A91CC36969B1C06A99D /* ShieldConfigurationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA67EAB17E196653BDABB464 /* ShieldConfigurationExtension.swift */; };
@@ -75,6 +78,7 @@
 		033AB9658DB75422C26ACBE2 /* PushupDetectorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushupDetectorTests.swift; sourceTree = "<group>"; };
 		14C7C0AFD2333A0302CED485 /* AngleCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngleCalculatorTests.swift; sourceTree = "<group>"; };
 		18D9054E45BDA041F5E43A57 /* CameraManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
+		1B8B0EFC3314EF9DF9FF7FD9 /* WelcomeStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeStepView.swift; sourceTree = "<group>"; };
 		1C56DBDD63A282E860E40E87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		2600B1157CDCCDB02023D789 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		3D202C2CC77C9E0625A151DD /* PushupCounterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushupCounterApp.swift; sourceTree = "<group>"; };
@@ -91,6 +95,7 @@
 		965689C789175808AE8CDC70 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		9D1C4C28FC8F51D988A2F3E1 /* PushupCounterTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = PushupCounterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EA0072B626DAED6717451E0 /* CameraPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreviewView.swift; sourceTree = "<group>"; };
+		A69410369882E65488E4FBCE /* GoalStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalStepView.swift; sourceTree = "<group>"; };
 		A98E9397CA1D9DF7E924B5AD /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		A9CBB6B83E47DA4F678DA165 /* DeviceActivityMonitorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceActivityMonitorExtension.swift; sourceTree = "<group>"; };
 		B6C925AD054A8C2FED519E56 /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
@@ -100,6 +105,7 @@
 		E6DFD351D4122390AE8FAD6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		ECC78961F21E04507B245040 /* DeviceActivityMonitorExtension.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = DeviceActivityMonitorExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAAA15E16F521E3EE91AC910 /* PushupDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushupDetector.swift; sourceTree = "<group>"; };
+		FCD43929FAC28CD97DC59250 /* PermissionsStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsStepView.swift; sourceTree = "<group>"; };
 		FD23BC70D9E06B34362B3E2E /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,7 +113,10 @@
 		09F93F49460737BB9BF2EDC8 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				A69410369882E65488E4FBCE /* GoalStepView.swift */,
 				965689C789175808AE8CDC70 /* OnboardingView.swift */,
+				FCD43929FAC28CD97DC59250 /* PermissionsStepView.swift */,
+				1B8B0EFC3314EF9DF9FF7FD9 /* WelcomeStepView.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -386,8 +395,10 @@
 				894862AF60E3E838FE376D0E /* CameraPreviewView.swift in Sources */,
 				6D4024B4200DB050954C98F7 /* ContentView.swift in Sources */,
 				34211D4FC941ABAAC8CFE7AA /* DailyRecord.swift in Sources */,
+				7E9E39765D049BC319B56B8F /* GoalStepView.swift in Sources */,
 				A48763F00E5F911210057CBF /* HistoryView.swift in Sources */,
 				C6D18561FB04AC3ACE9A2DEE /* OnboardingView.swift in Sources */,
+				C1C994063E68806D331A119C /* PermissionsStepView.swift in Sources */,
 				E53E7852F6DDBD416E3C1E26 /* PushupCounterApp.swift in Sources */,
 				39F9D90146A705C50E2F6243 /* PushupDetector.swift in Sources */,
 				ED9CECC29940196F2A458803 /* PushupSession.swift in Sources */,
@@ -395,6 +406,7 @@
 				6926FD9A4F9A73D4E31E4DC8 /* SettingsView.swift in Sources */,
 				BEBAD507B0DE046765962BD6 /* TodayView.swift in Sources */,
 				05C9CC8FE680B0F1C0DE50AE /* UserSettings.swift in Sources */,
+				44091A0F285E8265CE533223 /* WelcomeStepView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
