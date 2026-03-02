@@ -5,7 +5,8 @@ import SwiftData
 struct PushupCounterApp: App {
     var body: some Scene {
         WindowGroup {
-            Text("PushupCounter")
+            ContentView()
         }
+        .modelContainer(for: [UserSettings.self, DailyRecord.self, PushupSession.self])
     }
 }
