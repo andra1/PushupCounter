@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03363CDD00C543B1F3A1B489 /* AngleCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C7C0AFD2333A0302CED485 /* AngleCalculatorTests.swift */; };
 		04430ED38CF3B9CFFCDCE139 /* DeviceActivityMonitorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CBB6B83E47DA4F678DA165 /* DeviceActivityMonitorExtension.swift */; };
 		05C9CC8FE680B0F1C0DE50AE /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5B17486E4C7F26EBDBD894 /* UserSettings.swift */; };
 		34211D4FC941ABAAC8CFE7AA /* DailyRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E211A18DABB7037516DABD /* DailyRecord.swift */; };
 		5DC46F6A0F8B47939688993D /* PushupCounterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B4A9673787003AD3C837D8 /* PushupCounterTests.swift */; };
 		93C2EF8E63B7FB2CB43F7806 /* DeviceActivityMonitorExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = ECC78961F21E04507B245040 /* DeviceActivityMonitorExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CEED567E825366A830C1B8F7 /* AngleCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD6B6CFB5227C1A705DA84B /* AngleCalculator.swift */; };
 		DC395A91CC36969B1C06A99D /* ShieldConfigurationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA67EAB17E196653BDABB464 /* ShieldConfigurationExtension.swift */; };
 		DCC41D72F757EC7B053B10FB /* ShieldConfigurationExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 79AC80239B92F6CAC19BD658 /* ShieldConfigurationExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		DDB677D37FC4F04C60F92E27 /* DailyRecordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0307D299CCA37C50AD6A7088 /* DailyRecordTests.swift */; };
@@ -60,6 +62,7 @@
 
 /* Begin PBXFileReference section */
 		0307D299CCA37C50AD6A7088 /* DailyRecordTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyRecordTests.swift; sourceTree = "<group>"; };
+		14C7C0AFD2333A0302CED485 /* AngleCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngleCalculatorTests.swift; sourceTree = "<group>"; };
 		1C56DBDD63A282E860E40E87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		2600B1157CDCCDB02023D789 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		3D202C2CC77C9E0625A151DD /* PushupCounterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushupCounterApp.swift; sourceTree = "<group>"; };
@@ -73,6 +76,7 @@
 		79AC80239B92F6CAC19BD658 /* ShieldConfigurationExtension.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = ShieldConfigurationExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D1C4C28FC8F51D988A2F3E1 /* PushupCounterTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = PushupCounterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9CBB6B83E47DA4F678DA165 /* DeviceActivityMonitorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceActivityMonitorExtension.swift; sourceTree = "<group>"; };
+		BFD6B6CFB5227C1A705DA84B /* AngleCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngleCalculator.swift; sourceTree = "<group>"; };
 		CB5B17486E4C7F26EBDBD894 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		DA67EAB17E196653BDABB464 /* ShieldConfigurationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShieldConfigurationExtension.swift; sourceTree = "<group>"; };
 		E6DFD351D4122390AE8FAD6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -128,6 +132,7 @@
 		78F6561D4B9B61C2F1EA7507 /* PushupCounterTests */ = {
 			isa = PBXGroup;
 			children = (
+				14C7C0AFD2333A0302CED485 /* AngleCalculatorTests.swift */,
 				0307D299CCA37C50AD6A7088 /* DailyRecordTests.swift */,
 				45B4A9673787003AD3C837D8 /* PushupCounterTests.swift */,
 			);
@@ -137,6 +142,7 @@
 		8478745A251F4DE9B96F501F /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				BFD6B6CFB5227C1A705DA84B /* AngleCalculator.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -345,6 +351,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEED567E825366A830C1B8F7 /* AngleCalculator.swift in Sources */,
 				34211D4FC941ABAAC8CFE7AA /* DailyRecord.swift in Sources */,
 				E53E7852F6DDBD416E3C1E26 /* PushupCounterApp.swift in Sources */,
 				ED9CECC29940196F2A458803 /* PushupSession.swift in Sources */,
@@ -364,6 +371,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03363CDD00C543B1F3A1B489 /* AngleCalculatorTests.swift in Sources */,
 				DDB677D37FC4F04C60F92E27 /* DailyRecordTests.swift in Sources */,
 				5DC46F6A0F8B47939688993D /* PushupCounterTests.swift in Sources */,
 			);
