@@ -1,6 +1,7 @@
 import XCTest
 @testable import PushupCounter
 
+@MainActor
 final class PushupDetectorTests: XCTestCase {
 
     private var detector: PushupDetector!

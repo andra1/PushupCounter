@@ -6,6 +6,7 @@ enum PushupPhase: Equatable {
     case unknown
 }
 
+@MainActor
 @Observable
 final class PushupDetector {
     private(set) var count: Int = 0

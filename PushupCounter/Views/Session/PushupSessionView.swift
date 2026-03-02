@@ -12,7 +12,6 @@ struct PushupSessionView: View {
 
     @State private var cameraManager: CameraManager?
     @State private var sessionStartTime = Date()
-    @State private var sessionCount = 0
     @State private var showCelebration = false
 
     private var totalToday: Int {
@@ -146,7 +145,7 @@ struct PushupSessionView: View {
         dailyRecord.sessions.append(session)
         modelContext.insert(session)
 
-        if totalToday >= settings.dailyGoal {
+        if dailyRecord.totalPushups >= settings.dailyGoal {
             dailyRecord.goalMet = true
             screenTimeManager.removeShields()
         }
