@@ -20,13 +20,17 @@ A rep has full range of motion when:
 - `minElbowAngle < 90°` (arms bent deep enough at the bottom)
 - `maxElbowAngle > 160°` (arms fully extended at the top)
 
-**Elbow angle extraction:** Computed from three ARKit skeleton joint positions per arm:
-- Left: `left_shoulder_1_joint`, `left_forearm_joint`, `left_hand_joint`
-- Right: `right_shoulder_1_joint`, `right_forearm_joint`, `right_hand_joint`
+**Elbow angle extraction:** Computed from three ARKit 3D body skeleton joints per arm, accessed via string-based joint names on `bodyAnchor.skeleton.modelTransform(for: ARSkeleton.JointName(rawValue:))`:
+- Left: `"left_shoulder_1_joint"` (shoulder), `"left_forearm_joint"` (elbow), `"left_hand_joint"` (wrist)
+- Right: `"right_shoulder_1_joint"` (shoulder), `"right_forearm_joint"` (elbow), `"right_hand_joint"` (wrist)
 
-Joint positions are 3D (`simd_float4x4` model transforms from `bodyAnchor.skeleton`). Since pushups happen in a roughly 2D plane (sagittal), project to 2D by taking the X and Y components of each joint's translation column (`columns.3.x`, `columns.3.y`), then pass as `CGPoint` to the existing `AngleCalculator.angle(a:b:c:)`.
+Note: These are string identifiers from `ARSkeletonDefinition.defaultBody3D`, not the limited `ARSkeleton.JointName` static properties which don't include forearm.
 
-**Arm averaging:** `ARSessionManager` computes both left and right elbow angles. If both are available, pass the average. If only one arm's joints are tracked, use that one. If neither is available, pass `nil` for `elbowAngle`.
+Joint positions are 3D (`simd_float4x4` model transforms). Since pushups happen in a roughly 2D plane (sagittal), project to 2D by taking the X and Y components of each joint's translation column (`columns.3.x`, `columns.3.y`), then pass as `CGPoint` to the existing `AngleCalculator.angle(a:b:c:)`.
+
+**Detecting untracked joints:** `modelTransform(for:)` returns the identity matrix for untracked joints. Check by comparing `transform.columns.3` to `(0, 0, 0, 1)`.
+
+**Arm averaging:** `ARSessionManager` computes both left and right elbow angles. If both are tracked, pass the average. If only one arm's joints are tracked, use that one. If neither is available, pass `nil` for `elbowAngle`.
 
 **Score calculation:**
 - Per-session: `(reps with full ROM / total reps) * 100`
@@ -83,7 +87,7 @@ Extract elbow angle from skeleton joints alongside hip height:
 
 Accept elbow angle alongside hip height. Track per-rep angle extremes:
 
-- Change `processHipHeight(_ height: Float?)` → `processFrame(hipHeight: Float?, elbowAngle: Double?)`
+- Change `processHipHeight(_ height: Float?)` → `processFrame(hipHeight: Float?, elbowAngle: Double?)`. Only callsite is `ARSessionManager.session(_:didUpdate:)` — update there simultaneously.
 - New properties: `currentRepMinAngle: Double`, `currentRepMaxAngle: Double`, `completedRepAngles: [RepAngle]`
 - On each frame with a valid elbow angle: track running min/max for the current rep
 - On rep completion (DOWN → UP transition): append `RepAngle(minAngle, maxAngle)` to `completedRepAngles`, reset tracking min/max
