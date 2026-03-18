@@ -20,7 +20,13 @@ A rep has full range of motion when:
 - `minElbowAngle < 90°` (arms bent deep enough at the bottom)
 - `maxElbowAngle > 160°` (arms fully extended at the top)
 
-**Elbow angle extraction:** Computed from three ARKit skeleton joints — shoulder, elbow, wrist — using the existing `AngleCalculator.angle(a:b:c:)` utility. Average of left and right arms (or single arm if one is unavailable due to confidence).
+**Elbow angle extraction:** Computed from three ARKit skeleton joint positions per arm:
+- Left: `left_shoulder_1_joint`, `left_forearm_joint`, `left_hand_joint`
+- Right: `right_shoulder_1_joint`, `right_forearm_joint`, `right_hand_joint`
+
+Joint positions are 3D (`simd_float4x4` model transforms from `bodyAnchor.skeleton`). Since pushups happen in a roughly 2D plane (sagittal), project to 2D by taking the X and Y components of each joint's translation column (`columns.3.x`, `columns.3.y`), then pass as `CGPoint` to the existing `AngleCalculator.angle(a:b:c:)`.
+
+**Arm averaging:** `ARSessionManager` computes both left and right elbow angles. If both are available, pass the average. If only one arm's joints are tracked, use that one. If neither is available, pass `nil` for `elbowAngle`.
 
 **Score calculation:**
 - Per-session: `(reps with full ROM / total reps) * 100`
@@ -66,9 +72,12 @@ No new persisted fields on DailyRecord.
 
 Extract elbow angle from skeleton joints alongside hip height:
 
-- In `session(_:didUpdate:)`, after extracting `hipHeight`, also extract shoulder/elbow/wrist joint positions from `bodyAnchor.skeleton`
-- Compute elbow angle using `AngleCalculator.angle(a:b:c:)` (shoulder → elbow → wrist)
-- Pass both `hipHeight` and `elbowAngle` to `PushupDetector`
+- In `session(_:didUpdate:)`, after extracting `hipHeight` from `bodyAnchor.transform.columns.3.y`:
+  1. Get the skeleton's model transforms for left and right arm joints using `bodyAnchor.skeleton.modelTransform(for:)`
+  2. Project 3D positions to 2D (`CGPoint` from `columns.3.x` and `columns.3.y`)
+  3. Compute elbow angle for each arm via `AngleCalculator.angle(a: shoulder, b: elbow, c: wrist)`
+  4. Average the two angles (or use single arm if only one is tracked — `modelTransform(for:)` returns the identity matrix for untracked joints, so check for this)
+  5. Pass both `hipHeight` and `elbowAngle: Double?` to `PushupDetector.processFrame(hipHeight:elbowAngle:)`
 
 ### PushupDetector (modified)
 
@@ -85,7 +94,7 @@ Accept elbow angle alongside hip height. Track per-rep angle extremes:
 
 When the user taps "Done":
 - Read `completedRepAngles` from the detector
-- Encode to JSON `Data` and set on `PushupSession.repAnglesData`
+- Encode to JSON `Data` via `JSONEncoder` and set on `PushupSession.repAnglesData`. If encoding fails (shouldn't happen with simple Codable structs), save the session without angle data (`repAnglesData = nil`) — the pushup count is always more important than form tracking.
 - Save as part of the existing SwiftData save flow
 
 ## Card Design
