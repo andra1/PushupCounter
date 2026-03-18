@@ -6,15 +6,21 @@ A shareable daily summary card that visualizes pushup effort, with an animated f
 
 The form quality ring serves the same role as Strava's route map — a distinctive, glanceable visual that's unique to each day and immediately communicates effort.
 
+## Current Detection Architecture
+
+The app uses **ARKit body tracking** (not Vision framework). `ARSessionManager` runs an `ARBodyTrackingConfiguration`, receives `ARBodyAnchor` updates, and passes `bodyAnchor.transform.columns.3.y` (hip height) to `PushupDetector`. The detector uses hip height drop from a calibrated baseline to determine up/down state (drop > 0.15 = down, drop < 0.05 = up) with 3-frame debounce.
+
+Key: `ARBodyAnchor` also provides a full body skeleton via `bodyAnchor.skeleton`, which includes joint positions for shoulders, elbows, and wrists. We can extract elbow angles from the same anchor data without adding any new tracking system.
+
 ## Form Quality Metric
 
 **Definition:** Percentage of reps with full range of motion.
 
 A rep has full range of motion when:
-- `minAngle < 90°` (arms bent deep enough at the bottom)
-- `maxAngle > 160°` (arms fully extended at the top)
+- `minElbowAngle < 90°` (arms bent deep enough at the bottom)
+- `maxElbowAngle > 160°` (arms fully extended at the top)
 
-These thresholds match the existing `PushupDetector` constants (`downAngleThreshold = 90°`, `upAngleThreshold = 160°`).
+**Elbow angle extraction:** Computed from three ARKit skeleton joints — shoulder, elbow, wrist — using the existing `AngleCalculator.angle(a:b:c:)` utility. Average of left and right arms (or single arm if one is unavailable due to confidence).
 
 **Score calculation:**
 - Per-session: `(reps with full ROM / total reps) * 100`
@@ -27,7 +33,7 @@ These thresholds match the existing `PushupDetector` constants (`downAngleThresh
 Add one new persisted field:
 
 ```swift
-@Attribute var repAnglesData: Data? // JSON-encoded [RepAngle]
+@Attribute var repAnglesData: Data? // JSON-encoded [RepAngle], nil for sessions recorded before this feature
 ```
 
 Add a helper struct and computed properties:
@@ -38,32 +44,49 @@ struct RepAngle: Codable {
     let maxAngle: Double
 }
 
-var repAngles: [RepAngle]  // decoded from repAnglesData
-var formScore: Double       // % of reps with minAngle < 90 AND maxAngle > 160
+var repAngles: [RepAngle]  // decoded from repAnglesData, empty if nil
+var formScore: Double?      // nil if repAnglesData is nil (legacy session), otherwise % of reps with full ROM
 ```
 
 **Storage cost:** ~64 bytes per rep (two Doubles). A 50-rep session adds ~3KB.
+
+**Migration:** The field is optional (`Data?`). Existing sessions will have `nil`, and `formScore` returns `nil` for them. No SwiftData migration needed.
 
 ### DailyRecord (modified)
 
 Add one computed property:
 
 ```swift
-var formScore: Double  // weighted average of session form scores, weighted by rep count
+var formScore: Double?  // weighted average of session form scores (only sessions that have angle data), nil if no sessions have data
 ```
 
 No new persisted fields on DailyRecord.
 
+### ARSessionManager (modified)
+
+Extract elbow angle from skeleton joints alongside hip height:
+
+- In `session(_:didUpdate:)`, after extracting `hipHeight`, also extract shoulder/elbow/wrist joint positions from `bodyAnchor.skeleton`
+- Compute elbow angle using `AngleCalculator.angle(a:b:c:)` (shoulder → elbow → wrist)
+- Pass both `hipHeight` and `elbowAngle` to `PushupDetector`
+
 ### PushupDetector (modified)
 
-Track per-rep angle extremes during detection:
+Accept elbow angle alongside hip height. Track per-rep angle extremes:
 
+- Change `processHipHeight(_ height: Float?)` → `processFrame(hipHeight: Float?, elbowAngle: Double?)`
 - New properties: `currentRepMinAngle: Double`, `currentRepMaxAngle: Double`, `completedRepAngles: [RepAngle]`
-- On each angle update: track running min/max for the current rep
-- On rep completion (DOWN → UP transition): append `RepAngle(minAngle, maxAngle)` to `completedRepAngles`, reset tracking
-- Expose `completedRepAngles` for the session view to persist on save
+- On each frame with a valid elbow angle: track running min/max for the current rep
+- On rep completion (DOWN → UP transition): append `RepAngle(minAngle, maxAngle)` to `completedRepAngles`, reset tracking min/max
+- Expose `completedRepAngles` for the session view to read on save
+- `reset()` also clears angle tracking state
 
-No changes to `CameraManager` or `AngleCalculator`.
+### PushupSessionView (modified)
+
+When the user taps "Done":
+- Read `completedRepAngles` from the detector
+- Encode to JSON `Data` and set on `PushupSession.repAnglesData`
+- Save as part of the existing SwiftData save flow
 
 ## Card Design
 
@@ -157,11 +180,12 @@ No changes to `CameraManager` or `AngleCalculator`.
 |------|---------|
 | `Models/PushupSession.swift` | Add `repAnglesData`, `RepAngle` struct, `formScore` computed property |
 | `Models/DailyRecord.swift` | Add `formScore` computed property |
-| `Services/PushupDetector.swift` | Track per-rep min/max angles, expose `completedRepAngles` |
+| `Services/ARSessionManager.swift` | Extract elbow angle from skeleton joints, pass to detector |
+| `Services/PushupDetector.swift` | Accept elbow angle, track per-rep min/max, expose `completedRepAngles` |
 | `Views/Today/TodayView.swift` | Replace plain number with `DailyCardView` |
 | `Views/History/HistoryView.swift` | Use `CompactCardView` for each day |
 | `Views/History/DayDetailView.swift` | Add full card + share button |
-| `Views/Session/PushupSessionView.swift` | Pass `completedRepAngles` when saving session |
+| `Views/Session/PushupSessionView.swift` | Read `completedRepAngles` from detector and persist on save |
 
 ## Out of Scope
 
