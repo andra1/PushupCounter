@@ -85,6 +85,7 @@ targets:
     settings:
       base:
         GENERATE_INFOPLIST_FILE: YES
+        PRODUCT_BUNDLE_IDENTIFIER: com.pushupcounter.app.PushupCounterTests
     dependencies:
       - target: PushupCounter
 
