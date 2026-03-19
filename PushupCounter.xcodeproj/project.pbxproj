@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 63;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -107,7 +107,7 @@
 		591A5F0A7E1938941EFEFACB /* DeviceActivityMonitorExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DeviceActivityMonitorExtension.entitlements; sourceTree = "<group>"; };
 		63F9169821C1A788202B2F8C /* PushupCounter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PushupCounter.entitlements; sourceTree = "<group>"; };
 		6975CFD7BB0645724CDF3BBF /* PushupSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushupSession.swift; sourceTree = "<group>"; };
-		76CD551369DED775AD4DBFDF /* PushupCounter.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = PushupCounter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		76CD551369DED775AD4DBFDF /* PushupCounter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PushupCounter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79AC80239B92F6CAC19BD658 /* ShieldConfigurationExtension.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = ShieldConfigurationExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		81626AB3BA529F83775EB5C6 /* ScreenTimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTimeManager.swift; sourceTree = "<group>"; };
 		8EE972E553D0BF414A41CFAB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -129,7 +129,7 @@
 		E1ABF9F552840D0CC729ED0C /* ProgressRingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressRingView.swift; sourceTree = "<group>"; };
 		E6DFD351D4122390AE8FAD6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		E9A1015688426ACAA01C9D27 /* PushupSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushupSessionView.swift; sourceTree = "<group>"; };
-		ECC78961F21E04507B245040 /* DeviceActivityMonitorExtension.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = DeviceActivityMonitorExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECC78961F21E04507B245040 /* DeviceActivityMonitorExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = DeviceActivityMonitorExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6125B1EBCA9254131F7DB00 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		F8141C25452968714BA300AD /* RepAngleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepAngleTests.swift; sourceTree = "<group>"; };
 		FAAA15E16F521E3EE91AC910 /* PushupDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushupDetector.swift; sourceTree = "<group>"; };
@@ -422,11 +422,9 @@
 						ProvisioningStyle = Automatic;
 					};
 					7E61E249F5EDF9B3E353C910 = {
-						DevelopmentTeam = "";
 						ProvisioningStyle = Automatic;
 					};
 					A20797B1E729DBA460F8109E = {
-						DevelopmentTeam = "";
 						ProvisioningStyle = Automatic;
 					};
 					DE86F51379B0C875E3D6DFBF = {
@@ -445,7 +443,6 @@
 			);
 			mainGroup = 96D49028C75FADFFD18F4ABA;
 			minimizedProjectReferenceProxies = 1;
-			preferredProjectObjectVersion = 77;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -751,6 +748,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = DeviceActivityMonitorExtension/DeviceActivityMonitorExtension.entitlements;
+				DEVELOPMENT_TEAM = N7KQV7R355;
 				INFOPLIST_FILE = DeviceActivityMonitorExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -769,6 +767,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = PushupCounter/PushupCounter.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = N7KQV7R355;
 				INFOPLIST_FILE = PushupCounter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

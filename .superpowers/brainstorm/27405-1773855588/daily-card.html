@@ -1,0 +1,102 @@
+<h2>Daily Pushup Card</h2>
+<p class="subtitle">This is what gets shown in-app and exported for sharing</p>
+
+<div class="split">
+  <!-- The Card Mockup -->
+  <div class="mockup">
+    <div class="mockup-header">Card Design</div>
+    <div class="mockup-body" style="background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 100%); padding: 28px; border-radius: 16px; color: white; font-family: -apple-system, system-ui, sans-serif; min-height: 340px;">
+
+      <!-- Date header -->
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+        <div>
+          <div style="font-size: 13px; color: #888; text-transform: uppercase; letter-spacing: 1px;">Wednesday</div>
+          <div style="font-size: 18px; font-weight: 600; color: #ccc;">March 18, 2026</div>
+        </div>
+        <div style="font-size: 11px; color: #555; letter-spacing: 0.5px;">PUSHUP COUNTER</div>
+      </div>
+
+      <!-- Form Quality Ring — the centerpiece -->
+      <div style="display: flex; justify-content: center; margin: 20px 0 28px 0;">
+        <div style="position: relative; width: 140px; height: 140px;">
+          <svg viewBox="0 0 140 140" width="140" height="140">
+            <!-- Background ring -->
+            <circle cx="70" cy="70" r="58" fill="none" stroke="#222" stroke-width="8"/>
+            <!-- Form quality arc (80% = ~288deg) -->
+            <circle cx="70" cy="70" r="58" fill="none" stroke="url(#formGrad)" stroke-width="8"
+                    stroke-dasharray="291 364" stroke-dashoffset="0"
+                    stroke-linecap="round" transform="rotate(-90 70 70)">
+              <animate attributeName="stroke-dasharray" from="0 364" to="291 364" dur="1.2s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/>
+            </circle>
+            <defs>
+              <linearGradient id="formGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#4ade80"/>
+                <stop offset="100%" stop-color="#22d3ee"/>
+              </linearGradient>
+            </defs>
+          </svg>
+          <!-- Center text -->
+          <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
+            <div style="font-size: 32px; font-weight: 700; color: white; line-height: 1;">80%</div>
+            <div style="font-size: 11px; color: #888; margin-top: 2px;">FORM</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats row -->
+      <div style="display: flex; justify-content: space-around; text-align: center; padding: 16px 0; border-top: 1px solid #222; border-bottom: 1px solid #222;">
+        <div>
+          <div style="font-size: 28px; font-weight: 700; color: white;">47</div>
+          <div style="font-size: 11px; color: #888; text-transform: uppercase; letter-spacing: 0.5px;">Pushups</div>
+        </div>
+        <div style="width: 1px; background: #333;"></div>
+        <div>
+          <div style="font-size: 28px; font-weight: 700; color: white;">3</div>
+          <div style="font-size: 11px; color: #888; text-transform: uppercase; letter-spacing: 0.5px;">Sets</div>
+        </div>
+        <div style="width: 1px; background: #333;"></div>
+        <div>
+          <div style="font-size: 28px; font-weight: 700; color: white;">4:32</div>
+          <div style="font-size: 11px; color: #888; text-transform: uppercase; letter-spacing: 0.5px;">Time</div>
+        </div>
+      </div>
+
+      <!-- Per-set breakdown -->
+      <div style="margin-top: 16px; display: flex; gap: 8px; justify-content: center;">
+        <div style="background: #1e1e36; border-radius: 8px; padding: 8px 14px; text-align: center;">
+          <div style="font-size: 14px; font-weight: 600; color: #4ade80;">20</div>
+          <div style="font-size: 9px; color: #666;">SET 1</div>
+        </div>
+        <div style="background: #1e1e36; border-radius: 8px; padding: 8px 14px; text-align: center;">
+          <div style="font-size: 14px; font-weight: 600; color: #4ade80;">15</div>
+          <div style="font-size: 9px; color: #666;">SET 2</div>
+        </div>
+        <div style="background: #1e1e36; border-radius: 8px; padding: 8px 14px; text-align: center;">
+          <div style="font-size: 14px; font-weight: 600; color: #fbbf24;">12</div>
+          <div style="font-size: 9px; color: #666;">SET 3</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Explanation -->
+  <div style="padding: 20px;">
+    <h3>How it works</h3>
+    <div class="section">
+      <p class="label">The Ring</p>
+      <p>The form quality ring is the visual centerpiece — like Strava's route map. It animates from 0% to the actual score when the card appears. Color is green/cyan for good form, shifts toward amber/red for poor form.</p>
+    </div>
+    <div class="section">
+      <p class="label">The Stats</p>
+      <p>Three key numbers: total pushups, number of sets, total active time across all sessions that day.</p>
+    </div>
+    <div class="section">
+      <p class="label">Per-Set Chips</p>
+      <p>Small chips at the bottom show the count per set. Color reflects that set's form quality (green = good, amber = okay, red = poor).</p>
+    </div>
+    <div class="section">
+      <p class="label">Sharing</p>
+      <p>In-app: this card appears on the Today view and in History. Share button exports a short animated video (the ring filling up + stats appearing) or a static image.</p>
+    </div>
+  </div>
+</div>
