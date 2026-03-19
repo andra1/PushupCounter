@@ -91,7 +91,7 @@ extension CameraManager: AVCaptureVideoDataOutputSampleBufferDelegate {
 
         guard let observation = request.results?.first else {
             DispatchQueue.main.async { [weak self] in
-                self?.pushupDetector.processAngle(nil)
+                self?.pushupDetector.processFrame(hipHeight: nil, elbowAngle: nil)
                 self?.bodyDetected = false
             }
             return
@@ -100,7 +100,7 @@ extension CameraManager: AVCaptureVideoDataOutputSampleBufferDelegate {
         let angle = extractElbowAngle(from: observation)
 
         DispatchQueue.main.async { [weak self] in
-            self?.pushupDetector.processAngle(angle)
+            self?.pushupDetector.processFrame(hipHeight: nil, elbowAngle: angle)
             self?.bodyDetected = angle != nil
         }
     }
