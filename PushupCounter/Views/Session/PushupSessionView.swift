@@ -141,6 +141,7 @@ struct PushupSessionView: View {
         }
 
         let session = PushupSession(startTime: sessionStartTime, endTime: Date(), count: count)
+        session.repAnglesData = try? JSONEncoder().encode(pushupDetector.completedRepAngles)
         session.dailyRecord = dailyRecord
         dailyRecord.sessions.append(session)
         modelContext.insert(session)
