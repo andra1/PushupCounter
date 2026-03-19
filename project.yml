@@ -37,6 +37,9 @@ targets:
     dependencies:
       - target: ShieldConfigurationExtension
       - target: DeviceActivityMonitorExtension
+      - sdk: ARKit.framework
+      - sdk: RealityKit.framework
+      - sdk: AVFoundation.framework
 
   ShieldConfigurationExtension:
     type: app-extension
