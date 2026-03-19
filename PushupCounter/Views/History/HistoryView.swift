@@ -19,23 +19,7 @@ struct HistoryView: View {
                         Button {
                             selectedRecord = record
                         } label: {
-                            HStack {
-                                Circle()
-                                    .fill(record.goalMet ? .green : .red)
-                                    .frame(width: 12, height: 12)
-                                VStack(alignment: .leading) {
-                                    Text(record.date, style: .date)
-                                        .font(.headline)
-                                    Text("\(record.totalPushups) pushups in \(record.sessions.count) session(s)")
-                                        .font(.subheadline)
-                                        .foregroundStyle(.secondary)
-                                }
-                                Spacer()
-                                if record.goalMet {
-                                    Image(systemName: "checkmark.circle.fill")
-                                        .foregroundStyle(.green)
-                                }
-                            }
+                            CompactCardView(record: record)
                         }
                         .foregroundStyle(.primary)
                     }

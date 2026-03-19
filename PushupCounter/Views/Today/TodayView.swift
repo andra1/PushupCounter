@@ -56,46 +56,39 @@ struct TodayView: View {
     var body: some View {
         NavigationStack {
             if let todayRecord {
-                VStack(spacing: 32) {
-                    Spacer()
+                ScrollView {
+                    VStack(spacing: 24) {
+                        if todayRecord.totalPushups > 0 {
+                            DailyCardView(record: todayRecord)
+                                .padding(.horizontal, 16)
+                                .padding(.top, 16)
+                        } else {
+                            VStack(spacing: 12) {
+                                Text("0")
+                                    .font(.system(size: 72, weight: .bold, design: .rounded))
+                                Text("pushups today")
+                                    .font(.title3)
+                                    .foregroundStyle(.secondary)
+                            }
+                            .padding(.top, 60)
+                        }
 
-                    ProgressRingView(
-                        progress: settings.dailyGoal > 0
-                            ? Double(todayRecord.totalPushups) / Double(settings.dailyGoal)
-                            : 0,
-                        current: todayRecord.totalPushups,
-                        goal: settings.dailyGoal
-                    )
-                    .frame(width: 220, height: 220)
+                        Spacer(minLength: 40)
 
-                    HStack(spacing: 8) {
-                        Image(systemName: goalMet ? "lock.open.fill" : "lock.fill")
-                        Text(goalMet ? "Unlocked" : "Locked")
-                            .font(.title2.bold())
+                        Button {
+                            showingSession = true
+                        } label: {
+                            Label("Start Pushups", systemImage: "play.fill")
+                                .font(.title3.bold())
+                                .frame(maxWidth: .infinity)
+                                .padding()
+                                .background(.blue)
+                                .foregroundStyle(.white)
+                                .clipShape(RoundedRectangle(cornerRadius: 16))
+                        }
+                        .padding(.horizontal, 24)
+                        .padding(.bottom, 32)
                     }
-                    .foregroundStyle(goalMet ? .green : .red)
-
-                    if currentStreak > 0 {
-                        Label("\(currentStreak) day streak", systemImage: "flame.fill")
-                            .font(.headline)
-                            .foregroundStyle(.orange)
-                    }
-
-                    Spacer()
-
-                    Button {
-                        showingSession = true
-                    } label: {
-                        Label("Start Pushups", systemImage: "play.fill")
-                            .font(.title3.bold())
-                            .frame(maxWidth: .infinity)
-                            .padding()
-                            .background(goalMet ? .green : .blue)
-                            .foregroundStyle(.white)
-                            .clipShape(RoundedRectangle(cornerRadius: 16))
-                    }
-                    .padding(.horizontal, 24)
-                    .padding(.bottom, 32)
                 }
                 .fullScreenCover(isPresented: $showingSession) {
                     PushupSessionView(settings: settings, dailyRecord: todayRecord)
